@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Akumos Office</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">Akumos Office</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                            aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Ajuda
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseAuth" aria-expanded="false"
+                                    aria-controls="pagesCollapseAuth">
+                                    Suporte
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link"
+                                            href="javascript: alert('Tutorial wike page, não implementado ainda!')">Tutorial</a>
+                                        <a class="nav-link"
+                                            href="javascript:let t = 'Preciso de suporte técnico para o Akumos Office';contact(t)">Whatsapp</a>
+                                    </nav>
+                                </div>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">projeto</div>
+                    Akumos Office
+                </div>
+            </nav>
+        </div>
+
+        <div id="layoutSidenav_content" style="background-color: #F6F7F9;">
+            <main>
+                <div class="container-fluid px-4">
+                    <h5 class="mt-4"></h5>
+                    <!--==============================================================================-->
+                    <!-- MODAL CODE -->
+                    <!--==============================================================================-->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="true"
+                        tabindex="-1" data-keyboard="true" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                            <div class="modal-content" style="background-color: #2C3034;">
+                                <div class="modal-header" style="background-color: #202427;">
+                                    <h2 class="modal-title fs-5" id="staticBackdropLabel" style="color: #E7E5EB;">
+                                        Nome</h2>
+                                    <button type="button" id="modalCloseButton" class="btn-close btn-close-white"
+                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div style="margin-left: 10px;">
+                                        <h6 style="color: white">Legenda</h6>
+                                        <hr>
+                                        <table class="table table-dark table-striped" id="tableLabelModal">
+                                            <tr>
+                                                <td>
+                                                    <select id="inputFont" class="form-select form-select-sm"
+                                                        aria-label=".form-select-sm example">
+                                                        <option selected>Fonte</option>
+                                                        <option value="Arial">Arial</option>
+                                                        <option value="Times New Roman">Times New Roman</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input id="inputSize" class="form-control form-control-sm"
+                                                        type="text" placeholder="Tamanho">
+                                                </td>
+                                                <td>
+                                                    <input id="inputTemplate" class="form-control form-control-sm"
+                                                        type="text" placeholder="Template">
+                                                </td>
+                                                <td>
+                                                    <select class="form-select form-select-sm"
+                                                        aria-label=".form-select-sm" id="inputAlignment">
+                                                        <option selected>Alinhamento</option>
+                                                        <option value="left">Esquerda</option>
+                                                        <option value="center">Centralizado</option>
+                                                        <option value="right">Direita</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input type="color"
+                                                        class="form-control form-control-color form-control-sm"
+                                                        id="inputColor" value="#000000" title="Choose your color">
+                                                </td>
+                                            <tr>
+                                            <tr>
+                                                <td>
+                                                    <label for="inputBreak"
+                                                        class="form-label form-control-sm">Break</label>
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="inputBreak" width="5" height: 50px;>
+                                                </td>
+                                                <td>
+                                                    <label for="inputBold"
+                                                        class="form-label form-control-sm">Negrito</label>
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="inputBold" width="5" height: 50px;>
+                                                </td>
+                                                <td>
+                                                    <label for="inputItalic"
+                                                        class="form-label form-control-sm">Italico</label>
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="inputItalic" width="5" height: 50px;>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <h6 style="color: white">Valor</h6>
+                                        <hr>
+                                        <table class="table table-dark table-striped" id="tableFieldModal">
+                                            <tr>
+                                                <td>
+                                                    <select id="inputValueFont" class="form-select form-select-sm"
+                                                        aria-label=".form-select-sm example">
+                                                        <option selected>Fonte</option>
+                                                        <option value="Arial">Arial</option>
+                                                        <option value="Times New Roman">Times New Roman</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input id="inputValueSize" class="form-control form-control-sm"
+                                                        type="text" placeholder="Tamanho">
+                                                </td>
+                                                <td>
+                                                    <input id="inputValueTemplate" class="form-control form-control-sm"
+                                                        type="text" placeholder="Template">
+                                                </td>
+                                                <td>
+                                                    <select id="inputValueAlignment" class="form-select form-select-sm"
+                                                        aria-label=".form-select-sm">
+                                                        <option selected>Alinhamento</option>
+                                                        <option value="left">Esquerda</option>
+                                                        <option value="center">Centralizado</option>
+                                                        <option value="right">Direita</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input type="color"
+                                                        class="form-control form-control-color form-control-sm"
+                                                        id="inputValueColor" value="#000000" title="Choose your color">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label for="inputValueItalic"
+                                                        class="form-label form-control-sm">Italico</label>
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="inputValueItalic" width="5" height: 50px;>
+                                                </td>
+                                                <td>
+                                                    <label for="inputValueBold"
+                                                        class="form-label form-control-sm">Negrito</label>
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="inputValueBold" width="5" height: 50px;>
+                                                </td>
+                                                <td>
+                                                    <label for="inputValueLink"
+                                                        class="form-label form-control-sm">Link</label>
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="inputValueLink" width="5" height: 50px;>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input id="inputValueContains" class="form-control form-control-sm"
+                                                        type="text" placeholder="Contém">
+                                                </td>
+                                                <td>
+                                                    <select id="inputValueAndOur" class="form-select form-select-sm"
+                                                        aria-label=".form-select-sm example">
+                                                        <option selected>--</option>
+                                                        <option value="and">E</option>
+                                                        <option value="or">OU</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input id="inputValueStartWith" class="form-control form-control-sm"
+                                                        type="text" placeholder="Começa com">
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer" style="background-color: #202427;">
+                                    <button type="button" class="btn btn-secondary form-control-sm"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-secondary" onclick="apply()">Aplicar</button>
+                                    <button type="button" class="btn btn-secondary">Aplicar a selecionados</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--==============================================================================-->
+                    <!-- FILE UPLOAD -->
+                    <!--==============================================================================-->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Excel
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-10">
+                                <input id="fileupload" type="file" name="fileupload" onchange="uploadFile()"
+                                    accept=".xls, .xlsx" />
+                            </div>
+                            <hr>
+                            <!--==============================================================================-->
+                            <!-- ABAS -->
+                            <!--==============================================================================-->
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="fields-tab" data-bs-toggle="tab"
+                                        data-bs-target="#fields-tab-pane" type="button" role="tab"
+                                        aria-controls="fields-tab-pane" aria-selected="true">Campos</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="export-tab" data-bs-toggle="tab"
+                                        data-bs-target="#export-tab-pane" type="button" role="tab"
+                                        aria-controls="export-tab-pane" aria-selected="false">Exportar</button>
+                                </li>
+                            </ul>
+                            <!--==============================================================================-->
+                            <!-- ABAS CONTENT -->
+                            <!--==============================================================================-->
+                            <div class="tab-content" id="myTabContent" style="pointer-events: none;opacity: 0.4;">
+                                <!--==============================================================================-->
+                                <!-- CAMPOS ABA -->
+                                <!--==============================================================================-->
+                                <div class="tab-pane fade show active" id="fields-tab-pane" role="tabpanel"
+                                    aria-labelledby="campos-tab" tabindex="0">
+                                    <br>
+                                    <table class="table" id="tableFields">
+                                        <thead>
+                                            <tr>
+                                                <th width="5%"><input type="checkbox" onchange="selectAllRows(this)"
+                                                        checked></th>
+                                                <th width="55%">Campo</th>
+                                                <th width="40%">Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!--==============================================================================-->
+                                <!-- EXPORT ABA -->
+                                <!--==============================================================================-->
+                                <div class="tab-pane fade" id="export-tab-pane" role="tabpanel"
+                                    aria-labelledby="export-tab" tabindex="0">
+                                    <br>
+                                    <form class="row g-3">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="exampleFormControlTextarea1"
+                                                placeholder="Nome do arquivo"></textarea>
+                                        </div>
+                                    </form>
+                                    <br><br>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary">PDF</button>
+                                        <button class="btn btn-primary" onclick="callExport('word')">word</button>
+                                        <button class="btn btn-primary">JSON</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">donnationware &copy; akumosstl.github.io</div>
+                        <div>
+                            <a href="#">Donnationware</a>
+                            &middot;
+                            <a href="#">Termos &amp; Condições</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

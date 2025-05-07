@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Akumos Office</title>
+    <link href="../public/css/styles.css" rel="stylesheet" />
+    <link href="../public/css/build.css" rel="stylesheet" />
+
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <!--==============================================================================-->
+    <!-- HEADER -->
+    <!--==============================================================================-->
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand ps-3" href="index.html">Akumos Office</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+    </nav>
+    <!--==============================================================================-->
+    <!-- END HEADER -->
+    <!--==============================================================================-->
+
+    <!--==============================================================================-->
+    <!-- LAYOUT -->
+    <!--==============================================================================-->
+    <div id="layoutSidenav">
+        <!--==============================================================================-->
+        <!-- MENU -->
+        <!--==============================================================================-->
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                            aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Menu
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseAuth" aria-expanded="false"
+                                    aria-controls="pagesCollapseAuth">
+                                    Suporte
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop">Glossário</a>
+                                        <a class="nav-link"
+                                            href="javascript:let t = 'Preciso de suporte técnico para o Akumos Office';contact(t)">Whatsapp</a>
+                                    </nav>
+                                </div>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">projeto</div>
+                    Akumos Office
+                </div>
+            </nav>
+        </div>
+        <!--==============================================================================-->
+        <!-- END MENU -->
+        <!--==============================================================================-->
+        <div id="layoutSidenav_content" style="background-color: #F6F7F9;">
+            <!--==============================================================================-->
+            <!-- MAIN -->
+            <!--==============================================================================-->
+            <main>
+                <!--==============================================================================-->
+                <!-- MAIN CONTAINER -->
+                <!--==============================================================================-->
+                <div class="container-fluid px-4">
+                    <h5 class="mt-4"></h5>
+                    <!--==============================================================================-->
+                    <!-- CAMPOS_DIV -->
+                    <!--==============================================================================-->
+                    <div id="campos_question" style="display: none;">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Campos
+                            </div>
+                            <span id="descriptionQuestion" class="question-caption">
+                                Q - Selecione os campos que deseja utilizar. Utiliza as setas (para cima, para baixo)
+                                para rearangar as ordem
+                                na qual os campos irão ser criados.
+                            </span>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="mb-10">
+                                        <!--table class="table" id="table">
+                                            <th>
+                                                <tr>
+                                                    <td width="1%"><input type="checkbox" id="all"></td>
+                                                    <td width="20%">Campos</td>
+                                                    <td width="79%">Ações</td>
+                                                </tr>
+                                            </th>
+                                            <tbody>
+                                            </tbody>
+                                        </table-->
+                                    </div>
+                                </div>
+                                <br>
+                                <div>
+                                    <!--a href="#" class="btn btn-primary" onclick="next('Arquivo')">Voltar</a>
+                                    &nbsp;&nbsp;-->
+                                    <a href="#" class="btn btn-primary" onclick="next('Legendas')">Próximo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--==============================================================================-->
+                    <!-- LEGENDAS_DIV -->
+                    <!--==============================================================================-->
+                    <div id="legendas_question" style="display: none;">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Formatação de legendas
+                            </div>
+                            <span id="descriptionQuestion" class="question-caption">
+                                Q - Selecione a formatação que deseja utilizar para as legendas (nome das colunas).
+                                Você pode aplicar as formatações para mais de uma legenda ao mesmo tempo, para isto
+                                selecione os campos aos
+                                quais deseja aplicar a formatação.
+                            </span>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="inputSelectFont" class="form-label">Fonte</label>
+                                        <select id="inputSelectFont" class="form-select">
+                                            <option selected>...</option>
+                                            <option>Arial</option>
+                                            <option>Times New Roman</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="inputSelectAlignment" class="form-label">Alinhamento</label>
+                                        <select id="inputSelectAlignment" class="form-select">
+                                            <option selected>...</option>
+                                            <option value="left">Esquerda</option>
+                                            <option value="center">Centralizado</option>
+                                            <option value="right">Direita</option>
+                                            <option value="justify">Justificado</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="inputSize" class="form-label" width="4">Tamanho</label>
+                                        <input id="inputSize" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label for="inputTemplate" class="form-label">Template</label>
+                                        <input id="inputTemplate" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label for="inputColor" class="form-label">Color picker</label>
+                                        <input type="color" class="form-control form-control-color" id="inputColor"
+                                            value="#000000" title="Escolha a cor">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" id="inputBold">
+                                                <label class="form-check-label" for="inputBold">
+                                                    Negrito
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" id="inputItalic">
+                                                <label class="form-check-label" for="inputItalic">
+                                                    Itálico
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" id="inputSublimated">
+                                                <label class="form-check-label" for="inputSublimated">
+                                                    Sublinhado
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <br>
+                                        <a href="#" class="btn btn-secondary" onclick="applyFormatter()">Aplicar
+                                            formatação</a>
+                                    </div>
+                                </div>
+                                <div class="mb-10">
+                                    <table class="table" id="tableLabels">
+                                        <th>
+                                            <tr>
+                                                <td width="1%"><input type="checkbox" id="allLabels"></td>
+                                                <td width="20%">Campos</td>
+                                                <td width="79%">Código</td>
+                                            </tr>
+                                        </th>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <!--a href="#" class="btn btn-primary" onclick="next('Arquivo')">Voltar</a>
+                                    &nbsp;&nbsp;-->
+                                    <a href="#" class="btn btn-primary" onclick="next('Valores')">Próximo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--==============================================================================-->
+                    <!-- VALORES_DIV -->
+                    <!--==============================================================================-->
+                    <div id="valores_question" style="display: none;">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Formatação de valores
+                            </div>
+                            <span id="descriptionQuestion" class="question-caption">
+                                Q - Selecione a formatação que deseja utilizar para os valores (conteúdo das colunas).
+                                Você pode aplicar as formatações para mais de uma coluna/valor ao mesmo tempo, para isto
+                                selecione os campos aos
+                                quais deseja
+                                aplicar a formatação.
+                            </span>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="inputSelectFontValue" class="form-label">Fonte</label>
+                                        <select id="inputSelectFontValue" class="form-select">
+                                            <option selected>...</option>
+                                            <option>Arial</option>
+                                            <option>Times New Roman</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="inputSelectAlignmentValue" class="form-label">Alinhamento</label>
+                                        <select id="inputSelectAlignmentValue" class="form-select">
+                                            <option selected>...</option>
+                                            <option value="left">Esquerda</option>
+                                            <option value="center">Centralizado</option>
+                                            <option value="right">Direita</option>
+                                            <option value="justify">Justificado</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="inputSizeValue" class="form-label" width="4">Tamanho</label>
+                                        <input id="inputSizeValue" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label for="inputTemplateValue" class="form-label">Template</label>
+                                        <input id="inputTemplateValue" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label for="inputColorValue" class="form-label">Color picker</label>
+                                        <input type="color" class="form-control form-control-color" id="inputColorValue"
+                                            value="#000000" title="Escolha a cor">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" id="inputBoldValue">
+                                                <label class="form-check-label" for="inputBoldValue">
+                                                    Negrito
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" id="inputItalicValue">
+                                                <label class="form-check-label" for="inputItalicValue">
+                                                    Itálico
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" id="inputSublimatedValue">
+                                                <label class="form-check-label" for="inputSublimatedValue">
+                                                    Sublinhado
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" id="inputIndexValue">
+                                                <label class="form-check-label" for="inputIndexValue">
+                                                    Index
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" id="inputLinkValue">
+                                                <label class="form-check-label" for="inputLinkValue">
+                                                    Link
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <br>
+                                        <a href="#" class="btn btn-secondary" onclick="applyValoresFormatter()">Aplicar
+                                            formatação</a>
+                                    </div>
+                                </div>
+                                <div class="mb-10">
+                                    <table class="table" id="tableValues">
+                                        <th>
+                                            <tr>
+                                                <td width="1%"><input type="checkbox" id="allValues"></td>
+                                                <td width="20%">Campos</td>
+                                                <td width="79%">Código</td>
+                                            </tr>
+                                        </th>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <!--a href="#" class="btn btn-primary" onclick="next('Legendas')">Voltar</a>
+                                    &nbsp;&nbsp;-->
+                                    <a href="#" class="btn btn-primary" onclick="next('Formulas')">Próximo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--==============================================================================-->
+                    <!-- FORMULAS_DIV -->
+                    <!--==============================================================================-->
+                    
+                    <div id="formulas_x">
+
+                    </div>
+                    <div id="formulas_question" >
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Fórmulas
+                            </div>
+                            <span id="descriptionQuestion" class="question-caption">
+                                Q - Defina as fórmulas que deseja utilizar para os valores (conteúdo das colunas).
+                                Você pode aplicar as fórmulas para mais de uma coluna/valor ao mesmo tempo, para isto
+                                selecione os campos aos
+                                quais deseja
+                                aplicar a formatação.
+                            </span>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="inputStartWith" class="form-label">Começa com</label>
+                                        <input id="inputStartWith" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label for="inputAndOur" class="form-label">Condição</label>
+                                        <input id="inputAndOur" class="form-control" style="pointer-events:none" value="OU">
+                                    </div>
+                                    <div class="col">
+                                        <label for="inputContains" class="form-label">Contenha</label>
+                                        <input id="inputContains" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <br>
+                                        <a href="#" class="btn btn-secondary" onclick="FormulaQuestion.applyFormulaFormatter()">Aplicar
+                                            Fórmula</a>
+                                    </div>
+                                </div>
+                                <div class="mb-10" id="formulas_question_test">
+                                    <!--table class="table" id="tableFormula">
+                                        <th>
+                                            <tr>
+                                                <td width="1%"><input type="checkbox" id="allFormulas"></td>
+                                                <td width="20%">Campos</td>
+                                                <td width="79%">Código</td>
+                                            </tr>
+                                        </th>
+                                        <tbody>
+                                        </tbody>
+                                    </table-->
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-primary" onclick="next('Valores')">Voltar</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" class="btn btn-primary" onclick="next('Exportar')">Próximo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--==============================================================================-->
+                    <!-- EXPORTAR_DIV -->
+                    <!--==============================================================================-->
+                    <div id="exportar_question" style="display: none;">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Exportar
+                            </div>
+                            <span id="descriptionQuestion" class="question-caption">
+                                Q - Informe o nome do arquivo, sem a extensão, a ser gerado. Depois selecione o formato
+                                do arquivo (.pdf, .word, .json).
+                            </span>
+                            <div class="card-body">
+                                <div id="divFiles" class="card-body">
+                                    <form class="row g-3">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="inputFileName"
+                                                placeholder="Nome do arquivo"></textarea>
+                                        </div>
+                                    </form>
+                                    <br><br>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary">PDF</button>
+                                        <button class="btn btn-primary" onclick="callExport('word')">word</button>
+                                        <button class="btn btn-primary" onclick="callExport('json')">JSON</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-primary" onclick="next('Formulas')">Voltar</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--==============================================================================-->
+                <!-- END MAIN CONTAINER -->
+                <!--==============================================================================-->
+            </main>
+            <!--==============================================================================-->
+            <!-- END MAIN -->
+            <!--==============================================================================-->
+
+            <!--==============================================================================-->
+            <!-- FOOTER -->
+            <!--==============================================================================-->
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">donnationware &copy; akumosstl.github.io</div>
+                        <div>
+                            <a href="#">Donnationware</a>
+                            &middot;
+                            <a href="#">Termos &amp; Condições</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--==============================================================================-->
+            <!-- END FOOTER -->
+            <!--==============================================================================-->
+        </div>
+    </div>
+    <!--==============================================================================-->
+    <!-- END LAYOUT -->
+    <!--==============================================================================-->
+</body>
+
+<!--==============================================================================-->
+<!-- SCRIPTS -->
+<!--==============================================================================-->
+<script src="../public/js/commons/bootstrap.bundle.min.js"></script>
+<script src="../test/index_test.js"></script>
+<!--==============================================================================-->
+<!-- END SCRIPTS -->
+<!--==============================================================================-->
+
+</html>
