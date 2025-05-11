@@ -123,9 +123,11 @@ function process(fileName, schema, columns, records) {
         let addBreak = false
         for (const [key, value] of Object.entries(v)) {
             let e = schema.filter(s => s.campo == key)[0]
+            console.log(`schema: ${schema}`)
             skipRecord = comecaCom(e, value) && contenha(e, value) && columns.includes(key) ? true : false
             if (!skipRecord) break
             if (columns.includes(key)) {
+                console.log(`key: ${key} value: ${value}`)
                 addBreak = true
                 if (!skipIndex) {
                     let pIndex = docx.createP()

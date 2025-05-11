@@ -9,7 +9,7 @@ function camposBuild() {
                 if (e.currentTarget.checked) {
                     checkboxRow[0].checked = true
                     let text = row.cells[1].innerText
-                    if (text != 'Todos') {
+                    if (text != 'Campos') {
                         this.fieldsQuestionCampos.push(text)
                     }
                 } else {

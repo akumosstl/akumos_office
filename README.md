@@ -22,6 +22,8 @@ electron-packager . akumos --overwrite --asar=true --platform=win32 --arch=ia32 
 
 # electron package
 
+--experimental-network-inspection
+
 npm install -g pkg
 npm install --save-dev electron
 

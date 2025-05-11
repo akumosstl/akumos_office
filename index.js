@@ -4,9 +4,12 @@ const cors = require('cors');
 const fileUpload = require('express-fileupload');
 const office = require('./src/akumos_office')
 const { app, BrowserWindow } = require('electron')
+const bodyParser = require('body-parser')
 const appx = express();
+//--experimental-network-inspection
 
-if (true) {
+
+if (false) {
     const createWindow = () => {
         const win = new BrowserWindow({
             width: 1200,
@@ -23,7 +26,7 @@ if (true) {
     })
 
 }
-
+appx.use(bodyParser.json({ limit: '1000mb', extended: true }))
 appx.use(cors());
 appx.use(express.json())
 appx.use(fileUpload());

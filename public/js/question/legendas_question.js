@@ -55,7 +55,7 @@ function applyFormatter() {
         if (checkboxRow.length > 0 && checkboxRow[0].type == 'checkbox') {
             if (checkboxRow[0].checked == true) {
                 var fieldName = checkboxRow[0].closest('tr').cells[1].innerText
-                if (fieldName === 'Todos') return
+                if (fieldName === 'Campos') return
                 let schemaFiltered = this.schema.filter(ss => ss.campo === fieldName)
                 let s = schemaFiltered[0]
                 let inputSelectFont = document.getElementById("inputSelectFont")
